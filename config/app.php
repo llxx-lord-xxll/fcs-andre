@@ -1,6 +1,16 @@
 <?php
 
 return [
+    /*
+    |--------------------------------------------------------------------------
+    | Year
+    |--------------------------------------------------------------------------
+    |
+    | The FCS event is organized based on each year
+    | This year variable is used in several output areas such as title,user message, dialogs etc.
+    |
+    */
+    'year' => '2018',
 
     /*
     |--------------------------------------------------------------------------
