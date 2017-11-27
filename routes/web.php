@@ -11,8 +11,15 @@
 |
 */
 
-Route::get('/', function () {
-    return view('user.index');
+
+Route::get('/cpfcs', function () {
+    return view('user.login');
 });
 
+Route::get('/cpfcs/dashboard', function () {
+    return view('user.dashboard');
+});
 
+Route::get('/cpfcs/posts', function () {
+    return view('user.posts');
+});
