@@ -23,3 +23,11 @@ Route::get('/cpfcs/dashboard', function () {
 Route::get('/cpfcs/posts', function () {
     return view('user.posts');
 });
+
+Route::get('/cpfcs/users', function () {
+    return view('user.userman');
+});
+
+Route::get('/cpfcs/chapters', function () {
+    return view('user.chapterman');
+});

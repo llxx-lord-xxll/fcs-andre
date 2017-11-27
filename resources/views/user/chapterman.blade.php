@@ -6,7 +6,7 @@
 @endsection
 
 
-@section('stylesheet')
+@section('stylesheets')
 
     <link rel="stylesheet" type="text/css" href="{{asset('user/libs/datatables-net/media/css/dataTables.bootstrap4.min.css')}}"> <!-- original -->
     <link rel="stylesheet" type="text/css" href="{{asset('user/assets/styles/libs/datatables-net/datatables.min.css')}}"> <!-- customization -->
@@ -17,7 +17,7 @@
     <div class="ks-column ks-page">
         <div class="ks-header">
             <section class="ks-title">
-                <h3>Users</h3>
+                <h3>Chapter Management</h3>
 
                 <div class="ks-controls">
                     <nav class="breadcrumb ks-default">

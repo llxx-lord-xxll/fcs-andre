@@ -237,28 +237,28 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{asset('/cpfcs/dashboard')}}">
                         <span class="ks-icon la la-dashboard"></span>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{asset('/cpfcs/posts')}}">
                         <span class="ks-icon la la-newspaper-o"></span>
                         <span>Posts</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{asset('/cpfcs/chapters')}}">
                         <span class="ks-icon la la-flag"></span>
                         <span>Manage Chapters</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{asset('/cpfcs/users')}}">
                         <span class="ks-icon la la-user"></span>
                         <span>Manage Users</span>
                     </a>

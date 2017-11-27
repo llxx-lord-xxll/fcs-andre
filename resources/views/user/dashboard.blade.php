@@ -5,7 +5,7 @@
     Dashboard -
     @endsection
 
-@section('stylesheet')
+@section('stylesheets')
     <link rel="stylesheet" type="text/css" href="{{asset('user/assets/fonts/kosmo/styles.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('user/assets/fonts/weather/css/weather-icons.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('user/libs/c3js/c3.min.css')}}">
