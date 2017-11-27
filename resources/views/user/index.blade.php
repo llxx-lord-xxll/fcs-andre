@@ -243,342 +243,7 @@
                     </a>
                 </li>
 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-cubes"></span>
-                        <span>Layouts</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="../default-primary/index.html">Default</a>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Sidebar</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="../sidebar_sections-primary/index.html" target="_blank">Sections</a>
-                                <a class="dropdown-item" href="../sidebar_compact-primary/index.html" target="_blank">Compact</a>
-                                <a class="dropdown-item" href="../sidebar_iconbar-primary/index.html" target="_blank">Iconbar</a>
-                                <a class="dropdown-item" href="../sidebar_iconbar_compact-primary/index.html" target="_blank">Iconbar Compact</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Navigation</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="../horizontal_navbar-primary/index.html" target="_blank">Horizontal</a>
-                                <a class="dropdown-item" href="../horizontal_navbar_iconbar-primary/index.html" target="_blank">Horizontal Iconbar</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-flask"></span>
-                        <span>Apps</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>CRM</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="crm-contacts.html">Contacts</a>
-                                <a class="dropdown-item" href="crm-user-contact-view.html">Contact View</a>
-                                <a class="dropdown-item" href="crm-users-list-view.html">Users List View</a>
-                                <a class="dropdown-item" href="crm-users-grid-view.html">Users Grid View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Projects</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="projects-kanban-board.html">Kanban Board</a>
-                                <a class="dropdown-item" href="projects-grid-board.html">Grid Board</a>
-                                <a class="dropdown-item" href="projects-tasks.html">Tasks</a>
-                                <a class="dropdown-item" href="projects-task.html">Task</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Mail</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="mail-empty.html">Mail Empty</a>
-                                <a class="dropdown-item" href="mail-view.html">Mail View</a>
-                                <a class="dropdown-item" href="mail-create.html">Mail Create</a>
-                                <a class="dropdown-item" href="mail-compact.html">Mail Compact</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Tickets</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="tickets-empty.html">Empty</a>
-                                <a class="dropdown-item" href="tickets-list.html">List</a>
-                                <a class="dropdown-item" href="tickets-create.html">Create</a>
-                                <a class="dropdown-item" href="tickets-view.html">View</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Messenger</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="messenger.html">Default</a>
-                                <a class="dropdown-item" href="messenger-group.html">Group</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>File Manager</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <div class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <span>Grid</span>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="filemanager-grid.html">Default</a>
-                                        <a class="dropdown-item" href="filemanager-grid-selected-items.html">Selected Items</a>
-                                        <a class="dropdown-item" href="filemanager-grid-image.html">Image</a>
-                                        <a class="dropdown-item" href="filemanager-grid-audio.html">Audio</a>
-                                        <a class="dropdown-item" href="filemanager-grid-recent.html">Recent</a>
-                                    </div>
-                                </div>
-                                <div class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <span>List</span>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="filemanager-list.html">Default</a>
-                                        <a class="dropdown-item" href="filemanager-list-selected-items.html">Selected Items</a>
-                                        <a class="dropdown-item" href="filemanager-list-recent.html">Recent</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Document Viewer</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="document-viewer-image.html">Image Viewer</a>
-                                <a class="dropdown-item" href="document-viewer-pdf.html">Pdf Viewer</a>
-                                <a class="dropdown-item" href="document-viewer-presentation.html">Presentation Viewer</a>
-                                <a class="dropdown-item" href="document-viewer-audio.html">Audio Viewer</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="music-app.html">Music</a>
-                    </div>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="calendar.html">Calendar</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-toggle-off"></span>
-                        <span>Form</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="form-basic-inputs.html">Basic Inputs</a>
-                        <a class="dropdown-item" href="form-advanced-inputs.html">Extended Inputs</a>
-                        <a class="dropdown-item" href="form-buttons.html">Buttons</a>
-                        <a class="dropdown-item" href="form-validation.html">Validation</a>
-                        <a class="dropdown-item" href="form-touchspin.html">Touchspin</a>
-                        <a class="dropdown-item" href="form-flex-labels.html">Flex Labels</a>
-                        <a class="dropdown-item" href="form-mask-input.html">Mask Input</a>
-                        <a class="dropdown-item" href="form-autocomplete-and-tags.html">Autocomplete &amp; Tags</a>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Steps</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="form-steps-column.html">Column Steps</a>
-                                <a class="dropdown-item" href="form-steps-progress.html">Progress Steps</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-desktop"></span>
-                        <span>UI Kit</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="uikit-bootstrap-ui.html">Bootstrap UI</a>
-                        <a class="dropdown-item" href="uikit-typography.html">Typography</a>
-                        <a class="dropdown-item" href="uikit-panels.html">Panels</a>
-                        <a class="dropdown-item" href="uikit-tables.html">Tables</a>
-                        <a class="dropdown-item" href="uikit-tabs.html">Tabs</a>
-                        <a class="dropdown-item" href="uikit-default-alerts.html">Alerts</a>
-                        <a class="dropdown-item" href="uikit-pagination.html">Pagination</a>
-                        <a class="dropdown-item" href="uikit-modal.html">Modal</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-sliders"></span>
-                        <span>Components</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>File Upload</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="components-file-upload-uppy.html">Uppy</a>
-                                <a class="dropdown-item" href="components-file-upload-dropzone.html">DropZone</a>
-                                <a class="dropdown-item" href="components-file-upload-jquery-file-upload.html">Jquery File Upload</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Select</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="components-select-select2.html">Select2</a>
-                                <a class="dropdown-item" href="components-select-multi.html">Multi</a>
-                            </div>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Wysiwyg Editors</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="components-wysiwyg-editors-bootstrap-markdown-editor.html">Bootstrap Markdown</a>
-                                <a class="dropdown-item" href="components-wysiwyg-editors-simplemde-markdown-editor.html">SimpleMDE Markdown</a>
-                            </div>
-                        </div>
-                        <a class="dropdown-item" href="components-alerts-and-confirm.html">Alerts &amp; Confirm</a>
-                        <a class="dropdown-item" href="components-sweetalert.html">SweetAlert</a>
-                        <a class="dropdown-item" href="components-bootstrap-notify.html">Bootstrap Notify</a>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>DatePicker</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="components-datepicker-flatpickr.html">Flatpickr</a>
-                                <a class="dropdown-item" href="components-datepicker-bootstrap-date-range-picker.html">Range DatePicker</a>
-                            </div>
-                        </div>
-                        <a class="dropdown-item" href="components-ion-range-slider-flat-skin-basic.html">Ion Range Slider</a>
-                        <a class="dropdown-item" href="components-nestable.html">Nestable</a>
-                        <a class="dropdown-item" href="components-colorpicker.html">Color Picker</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-user"></span>
-                        <span>Profile</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile-social-profile.html">Social Profile</a>
-                        <a class="dropdown-item" href="profile-customer-profile.html">Customer Profile</a>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                                <span>Settings</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="profile-settings-general.html">General</a>
-                                <a class="dropdown-item" href="profile-settings-contact-info.html">Contact Info</a>
-                                <a class="dropdown-item" href="profile-settings-experience.html">Experience</a>
-                                <a class="dropdown-item" href="profile-settings-education.html">Education</a>
-                                <a class="dropdown-item" href="profile-settings-organizations.html">Organizations</a>
-                                <a class="dropdown-item" href="profile-settings-notifications.html">Notifications</a>
-                                <a class="dropdown-item" href="profile-settings-billing.html">Billing</a>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-th"></span>
-                        <span>DataTables</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="datatables-datatables-net.html">DataTables.net</a>
-                        <a class="dropdown-item" href="datatables-bootstrap-table.html">Bootstrap Table</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-puzzle-piece"><span class="badge badge-pill badge-pink ks-label">3</span></span>
-                        <span>Widgets</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="widgets-panels.html">Panels</a>
-                        <a class="dropdown-item" href="widgets-upload.html">Upload</a>
-                        <a class="dropdown-item" href="widgets-tables.html">Tables</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-file-text-o"></span>
-                        <span>Pages</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pages-blank.html">Blank</a>
-                        <a class="dropdown-item" href="pages-error404.html">Error 404</a>
-                        <a class="dropdown-item" href="pages-error500.html">Error 500</a>
-                        <a class="dropdown-item" href="pages-contacts.html">Contacts</a>
-                        <a class="dropdown-item" href="pages-login.html" target="_blank">Login</a>
-                        <a class="dropdown-item" href="pages-signup.html" target="_blank">Sign Up</a>
-                        <a class="dropdown-item" href="pages-forgot-password.html" target="_blank">Forgot Password</a>
-                        <a class="dropdown-item" href="pages-locked-account.html" target="_blank">Locked Account</a>
-                        <a class="dropdown-item" href="pages-confirmation.html" target="_blank">Confirmation</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-credit-card"></span>
-                        <span>Payment</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="payment-billing.html">Billing</a>
-                        <a class="dropdown-item" href="payment-invoices.html">Invoices</a>
-                        <a class="dropdown-item" href="payment-order.html">Order</a>
-                        <a class="dropdown-item" href="payment-orders-history.html">Orders History</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle"  href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                        <span class="ks-icon la la-usd"></span>
-                        <span>Pricing</span>
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="pricing-plans.html">Plans</a>
-                        <a class="dropdown-item" href="pricing-subscriptions.html">Subscriptions</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="email-templates.html">
-                        <span class="ks-icon la la-envelope-o"></span>
-                        <span>Email Templates</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="documentation.html">
-                        <span class="ks-icon la la-book"></span>
-                        <span>Documentation</span>
-                    </a>
-                </li>
+
 
             </ul>
         </div>
@@ -610,92 +275,13 @@
             <div class="ks-body">
                 <div class="ks-dashboard-tabbed-sidebar">
                     <div class="ks-dashboard-tabbed-sidebar-widgets">
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="card ks-widget-payment-simple-amount-item ks-purple">
-                                    <div class="payment-simple-amount-item-icon-block">
-                                        <span class="ks-icon-combo-chart ks-icon"></span>
-                                    </div>
 
-                                    <div class="payment-simple-amount-item-body">
-                                        <div class="payment-simple-amount-item-amount">
-                                            <span class="ks-amount">$9.24</span>
-                                            <span class="ks-amount-icon ks-icon-circled-up-right"></span>
-                                        </div>
-                                        <div class="payment-simple-amount-item-description">
-                                            Total Profit <span class="ks-progress-type">(+$1.89)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card ks-widget-payment-simple-amount-item ks-green">
-                                    <div class="payment-simple-amount-item-icon-block">
-                                        <span class="la la-pie-chart ks-icon"></span>
-                                    </div>
-
-                                    <div class="payment-simple-amount-item-body">
-                                        <div class="payment-simple-amount-item-amount">
-                                            <span class="ks-amount">$2.190</span>
-                                            <span class="ks-amount-icon ks-icon-circled-up-right"></span>
-                                        </div>
-                                        <div class="payment-simple-amount-item-description">
-                                            Total Revenue <span class="ks-progress-type">(+$1.89)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card ks-widget-payment-simple-amount-item ks-pink">
-                                    <div class="payment-simple-amount-item-icon-block">
-                                        <span class="ks-icon-user ks-icon"></span>
-                                    </div>
-
-                                    <div class="payment-simple-amount-item-body">
-                                        <div class="payment-simple-amount-item-amount">
-                                            <span class="ks-amount">23</span>
-                                            <span class="ks-amount-icon ks-icon-circled-down-left"></span>
-                                        </div>
-                                        <div class="payment-simple-amount-item-description">
-                                            Active Clients <span class="ks-progress-type">(+$1.89)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3">
-                                <div class="card ks-widget-payment-simple-amount-item ks-orange">
-                                    <div class="payment-simple-amount-item-icon-block">
-                                        <span class="la la-area-chart ks-icon"></span>
-                                    </div>
-
-                                    <div class="payment-simple-amount-item-body">
-                                        <div class="payment-simple-amount-item-amount">
-                                            <span class="ks-amount">$431.2</span>
-                                            <span class="ks-amount-icon ks-icon-circled-up-right"></span>
-                                        </div>
-                                        <div class="payment-simple-amount-item-description">
-                                            Average Profit <span class="ks-progress-type">(+$1.89)</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="card ks-card-widget ks-widget-payment-card-rate-details">
                                     <h5 class="card-header">
-                                        Card Rate Details
+                                        Exchange Rates
 
-                                        <div class="dropdown ks-control">
-                                            <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="ks-icon la la-ellipsis-h"></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Add Card</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
                                     </h5>
                                     <div class="card-block">
                                         <div class="ks-card-widget-datetime">
@@ -742,28 +328,12 @@
                                         </table>
                                     </div>
                                 </div>
-                                <div class="card ks-card-widget ks-widget-payment-budget">
-                                    <a href="#" class="ks-thumbnail">
-                                        <img src="{{asset('user/assets/img/widgets/cover.png')}}" class="embed-responsive">
-                                    </a>
-                                    <a class="card-header">Magazine Images</a>
-                                    <div class="ks-card-widget-datetime">Last update <span class="ks-text-bold">Apr 17, 2017</span></div>
-                                    <div class="card-block">
-                                        <div class="ks-payment-budget-amount-block">
-                                            <div class="ks-text-action">$44.99</div>
-                                            <div class="ks-description">Budget</div>
-                                        </div>
-                                        <div class="ks-payment-budget-remaining-block">
-                                            <div class="ks-text-action">Early Apr 2017</div>
-                                            <div class="ks-description ks-color-purple">10 days Remaining</div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="col-lg-4">
                                 <div class="card ks-card-widget ks-widget-payment-earnings">
                                     <h5 class="card-header">
-                                        Next Payout
+                                        Online Sales
 
                                         <div class="dropdown ks-control">
                                             <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -789,86 +359,14 @@
                                         <div id="ks-next-payout-chart" class="ks-payment-earnings-chart"></div>
                                     </div>
                                 </div>
-                                <div class="card ks-card-widget ks-widget-tasks-overview-progress">
-                                    <h5 class="card-header">
-                                        All Tasks Overview
 
-                                        <div class="dropdown ks-control">
-                                            <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="ks-icon la la-ellipsis-h"></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Add Card</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </h5>
-                                    <div class="card-block">
-                                        <div class="ks-card-widget-datetime">
-                                            Next <span class="ks-text-bold">4 weeks</span>
-                                        </div>
-                                        <div class="ks-tasks-progress-items">
-                                            <div class="ks-tasks-progress-item">
-                                                <div class="ks-label">Week 3</div>
-                                                <div class="ks-progress">
-                                                    <div class="progress ks-progress-xs">
-                                                        <div class="progress-bar ks-task-progress-bar" role="progressbar" style="width: 20%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-due-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-qa-bar" role="progressbar" style="width: 10%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-delegated-bar" role="progressbar" style="width: 40%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="ks-tasks-progress-item">
-                                                <div class="ks-label">Week 4</div>
-                                                <div class="ks-progress">
-                                                    <div class="progress ks-progress-xs">
-                                                        <div class="progress-bar ks-task-progress-bar" role="progressbar" style="width: 10%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-due-bar" role="progressbar" style="width: 40%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-qa-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-delegated-bar" role="progressbar" style="width: 30%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="ks-tasks-progress-item">
-                                                <div class="ks-label">Week 5</div>
-                                                <div class="ks-progress">
-                                                    <div class="progress ks-progress-xs">
-                                                        <div class="progress-bar ks-task-progress-bar" role="progressbar" style="width: 50%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-due-bar" role="progressbar" style="width: 10%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-qa-bar" role="progressbar" style="width: 30%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-delegated-bar" role="progressbar" style="width: 10%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="ks-tasks-progress-item">
-                                                <div class="ks-label">Week 6</div>
-                                                <div class="ks-progress">
-                                                    <div class="progress ks-progress-xs">
-                                                        <div class="progress-bar ks-task-progress-bar" role="progressbar" style="width: 20%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-due-bar" role="progressbar" style="width: 10%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-qa-bar" role="progressbar" style="width: 50%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        <div class="progress-bar ks-task-delegated-bar" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <ul class="ks-tasks-progress-item-statuses">
-                                            <li class="ks-task-progress-bar-status">Progress</li>
-                                            <li class="ks-task-progress-due-status">Due</li>
-                                            <li class="ks-task-progress-qa-status">QA</li>
-                                            <li class="ks-task-progress-delegated-status">Delegated</li>
-                                        </ul>
-                                    </div>
-                                </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="card ks-card-widget ks-widget-payment-earnings">
                                             <h5 class="card-header">
-                                                Total Earnings
+                                                Online Bookings
 
                                                 <div class="dropdown ks-control">
                                                     <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -899,123 +397,22 @@
 
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <div class="card ks-widget-payment-price-ratio ks-green">
-                                            <div class="ks-price-ratio-title">
-                                                Share Price
-                                            </div>
-                                            <div class="ks-price-ratio-amount">23.82</div>
-                                            <div class="ks-price-ratio-progress">
-                                                <span class="ks-icon ks-icon-circled-up-right"></span>
-                                                <div class="ks-text">0.32%</div>
-                                            </div>
-                                        </div>
-                                        <div class="card ks-widget-payment-price-ratio ks-blue">
-                                            <div class="ks-price-ratio-title">
-                                                Share Price
-                                            </div>
-                                            <div class="ks-price-ratio-amount">23.82</div>
-                                            <div class="ks-price-ratio-progress">
-                                                <span class="ks-icon ks-icon-circled-up-right"></span>
-                                                <div class="ks-text">0.32%</div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div class="col-lg-6">
-                                        <div class="card ks-widget-payment-price-ratio ks-purple">
-                                            <div class="ks-price-ratio-title">
-                                                Share Price
-                                            </div>
-                                            <div class="ks-price-ratio-amount">0.23</div>
-                                            <div class="ks-price-ratio-progress">
-                                                <span class="ks-icon ks-icon-circled-down-left"></span>
-                                                <div class="ks-text">1.56%</div>
-                                            </div>
-                                        </div>
-                                        <div class="card ks-widget-payment-price-ratio ks-yellow">
-                                            <div class="ks-price-ratio-title">
-                                                Share Price
-                                            </div>
-                                            <div class="ks-price-ratio-amount">0.23</div>
-                                            <div class="ks-price-ratio-progress">
-                                                <span class="ks-icon ks-icon-circled-down-left"></span>
-                                                <div class="ks-text">1.56%</div>
-                                            </div>
-                                        </div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card ks-card-widget ks-widget-payment-table-invoicing">
-                                    <h5 class="card-header">
-                                        Invoicing
-
-                                        <div class="ks-controls">
-                                            <a href="#" class="ks-control-link">View All Invoices</a>
-                                            <a href="#" class="ks-control-icon">
-                                                <span class="la la-plus-circle ks-icon"></span>
-                                            </a>
-                                        </div>
-                                    </h5>
-                                    <div class="card-block">
-                                        <table class="table ks-payment-table-invoicing">
-                                            <tr>
-                                                <td class="ks-text-light" width="1">00451</td>
-                                                <td>Design Works</td>
-                                                <td class="ks-text-light">Twitter</td>
-                                                <td class="ks-text-right">
-                                                    <span class="badge badge-cranberry">Delayed</span>
-                                                </td>
-                                                <td width="1">$2500.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-light" width="1">00452</td>
-                                                <td class="ks-text-bold">Illustrations</td>
-                                                <td class="ks-text-light">Twitter</td>
-                                                <td class="ks-text-right">
-                                                    <span class="badge badge-crusta">Pending</span>
-                                                </td>
-                                                <td class="ks-text-bold" width="1">$460.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-light" width="1">00453</td>
-                                                <td class="ks-text-bold">UX Study</td>
-                                                <td class="ks-text-light">Twitter</td>
-                                                <td class="ks-text-right">
-                                                    <span class="badge badge-mantis">Paid</span>
-                                                </td>
-                                                <td class="ks-text-bold" width="1">$1280.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-light" width="1">00454</td>
-                                                <td class="ks-text-bold">UX Study</td>
-                                                <td class="ks-text-light">Twitter</td>
-                                                <td class="ks-text-right">
-                                                    <span class="badge badge-default">Out</span>
-                                                </td>
-                                                <td class="ks-text-bold" width="1">$1280.00</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-light" width="1">00455</td>
-                                                <td class="ks-text-bold">Design Support</td>
-                                                <td class="ks-text-light">Twitter</td>
-                                                <td class="ks-text-right">
-                                                    <span class="badge badge-default">Out</span>
-                                                </td>
-                                                <td class="ks-text-bold" width="1">$350.00</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
+                            <div class="col-xl-12">
                                 <div class="card ks-card-widget ks-widget-tasks-table">
                                     <h5 class="card-header">
-                                        Important Upcoming Tasks
+                                        Upcomming Events
 
                                         <div class="ks-controls">
-                                            <a href="#" class="ks-control-link">View All Tasks</a>
+                                            <a href="#" class="ks-control-link">View All Events</a>
                                             <a href="#" class="ks-control-icon">
                                                 <span class="la la-plus-circle ks-icon"></span>
                                             </a>
@@ -1032,7 +429,7 @@
                                                 </td>
                                                 <td>Create new prototype for the landing page</td>
                                                 <td class="ks-text-right">
-                                                    <span class="badge badge-cranberry">Out today</span>
+                                                    <span class="badge badge-cranberry">Tomorrow</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1044,7 +441,7 @@
                                                 </td>
                                                 <td>Add new Google Analitics code to all files</td>
                                                 <td class="ks-text-right">
-                                                    <span class="badge badge-default">Due in 3 days</span>
+                                                    <span class="badge badge-default"> in 3 days</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1056,7 +453,7 @@
                                                 </td>
                                                 <td>Finish dashboard UI Kit</td>
                                                 <td class="ks-text-right">
-                                                    <span class="badge badge-default">Due in 5 days</span>
+                                                    <span class="badge badge-default"> in 5 days</span>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -1068,225 +465,21 @@
                                                 </td>
                                                 <td>Update parallax scroll on team page</td>
                                                 <td class="ks-text-right">
-                                                    <span class="badge badge-default">Due in 7 days</span>
+                                                    <span class="badge badge-default"> in 7 days</span>
                                                 </td>
                                             </tr>
-                                            <tr>
-                                                <td class="ks-cell-checkbox">
-                                                    <label class="custom-control custom-checkbox ks-checkbox ks-no-description ks-checkbox-success">
-                                                        <input type="checkbox" class="custom-control-input" checked>
-                                                        <span class="custom-control-indicator"></span>
-                                                    </label>
-                                                </td>
-                                                <td class="ks-cell-checked" colspan="2">Add new Google Analitics code to all files</td>
-                                            </tr>
+
                                         </table>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-8">
-                                <div class="card ks-card-widget ks-widget-payment-table">
-                                    <h5 class="card-header">
-                                        Recent Income
 
-                                        <div class="ks-controls">
-                                            <a href="#" class="ks-control-link">View all</a>
-                                        </div>
-                                    </h5>
-                                    <div class="card-block">
-                                        <table class="table ks-payment-table">
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-1.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-light">Easy One Page Dashboard</td>
-                                                <td class="ks-text-bold">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap">3 days ago</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-8.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-light">Easy One Page Dashboard</td>
-                                                <td class="ks-text-bold">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap">3 days ago</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-9.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-light">Easy One Page Dashboard</td>
-                                                <td class="ks-text-bold">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap">3 days ago</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-10.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-light">Easy One Page Dashboard</td>
-                                                <td class="ks-text-bold">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap">3 days ago</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-11.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-light">Easy One Page Dashboard</td>
-                                                <td class="ks-text-bold">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap">3 days ago</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                                <div class="card ks-card-widget ks-widget-payment-table">
-                                    <h5 class="card-header">
-                                        Best Customers
-
-                                        <div class="ks-controls">
-                                            <a href="#" class="ks-control-link">View all</a>
-                                        </div>
-                                    </h5>
-                                    <div class="card-block">
-                                        <table class="table ks-payment-table">
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-1.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-bold ks-text-right" width="1">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap" width="1">3 projects</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-8.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-bold ks-text-right" width="1">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap" width="1">3 projects</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-9.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-bold ks-text-right" width="1">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap" width="1">3 projects</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-10.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-bold ks-text-right" width="1">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap" width="1">3 projects</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-text-bold ks-text-no-wrap">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-11.jpg')}}" width="28" height="28" class="ks-avatar ks-img-circle"> John Doe
-                                                </td>
-                                                <td class="ks-text-bold ks-text-right" width="1">$150</td>
-                                                <td class="ks-text-light ks-text-right ks-text-no-wrap" width="1">3 projects</td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4">
-                                <div class="card ks-card-widget ks-widget-tasks-statuses-progress">
-                                    <h5 class="card-header">
-                                        Tasks
-
-                                        <div class="ks-controls">
-                                            <a href="#" class="ks-control-link">January 2017</a>
-                                        </div>
-                                    </h5>
-                                    <div class="card-block">
-                                        <table class="tasks-statuses-progress-table">
-                                            <tr>
-                                                <td class="ks-progress-status">Completed</td>
-                                                <td width="1" class="ks-text-light ks-text-right">95%</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-progress-status">Total</td>
-                                                <td width="1" class="ks-text-light ks-text-right">95%</td>
-                                            </tr>
-                                            <tr>
-                                                <td class="ks-progress-status">Monthle Average</td>
-                                                <td width="1" class="ks-text-light ks-text-right">95%</td>
-                                            </tr>
-                                        </table>
-
-                                        <hr>
-
-                                        <div class="tasks-total-statuses-progress">
-                                            <span class="ks-name">Progress</span>
-                                            <div class="progress ks-progress-xs">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 79%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ks-amount">79%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card ks-card-widget ks-widget-payment-active-clients">
-                                    <h5 class="card-header">Active Clients</h5>
-                                    <div class="card-block">
-                                        <div class="ks-card-widget-datetime">
-                                            You’re currently in <span class="ks-text-bold">TOP 10</span>
-                                            of platform your rating is <span class="ks-text-bold">4.85</span>.
-                                            Keep up great work!
-                                        </div>
-                                        <div class="ks-active-clients-category-progress">
-                                            <span class="ks-name">Rating</span>
-                                            <div class="progress ks-progress-xs">
-                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ks-amount">95%</span>
-                                        </div>
-                                        <div class="ks-active-clients-category-progress">
-                                            <span class="ks-name">Budget</span>
-                                            <div class="progress ks-progress-xs">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 68%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ks-amount">68%</span>
-                                        </div>
-                                        <div class="ks-active-clients-category-progress">
-                                            <span class="ks-name">Timing</span>
-                                            <div class="progress ks-progress-xs">
-                                                <div class="progress-bar bg-cranberry" role="progressbar" style="width: 36%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ks-amount">36%</span>
-                                        </div>
-
-                                        <hr>
-
-                                        <div class="ks-active-clients-category-progress">
-                                            <span class="ks-name">Rating</span>
-                                            <div class="progress ks-progress-xs">
-                                                <div class="progress-bar bg-info" role="progressbar" style="width: 55%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ks-amount">55%</span>
-                                        </div>
-                                        <div class="ks-active-clients-category-progress">
-                                            <span class="ks-name">Budget</span>
-                                            <div class="progress ks-progress-xs">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 18%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ks-amount">18%</span>
-                                        </div>
-                                        <div class="ks-active-clients-category-progress">
-                                            <span class="ks-name">Timing</span>
-                                            <div class="progress ks-progress-xs">
-                                                <div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                            <span class="ks-amount">76%</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="row">
                             <div class="col-xl-12">
                                 <div class="card ks-card-widget ks-widget-chart-orders">
                                     <h5 class="card-header">
-                                        Orders
+                                        Ticket Sales &amp; Booking Overview
 
                                         <div class="ks-controls">
                                             <a href="#" class="ks-control-link">January 2017</a>
@@ -1303,7 +496,7 @@
                             <div class="col-xl-3">
                                 <div class="card ks-card-widget ks-widget-payment-total-amount ks-purple-light">
                                     <h5 class="card-header">
-                                        Total Teachers
+                                        Total Delegates
 
                                         <div class="dropdown ks-control">
                                             <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1335,7 +528,7 @@
                             <div class="col-xl-3">
                                 <div class="card ks-card-widget ks-widget-payment-total-amount ks-green-light">
                                     <h5 class="card-header">
-                                        Total Students
+                                        Total Speakers
 
                                         <div class="dropdown ks-control">
                                             <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1367,7 +560,7 @@
                             <div class="col-xl-3">
                                 <div class="card ks-card-widget ks-widget-payment-total-amount ks-pink-light">
                                     <h5 class="card-header">
-                                        Total Admins
+                                        Total Alumni
 
                                         <div class="dropdown ks-control">
                                             <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1399,7 +592,7 @@
                             <div class="col-xl-3">
                                 <div class="card ks-card-widget ks-widget-payment-total-amount ks-orange-light">
                                     <h5 class="card-header">
-                                        Others
+                                        Number of Chapters
 
                                         <div class="dropdown ks-control">
                                             <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -1539,153 +732,6 @@
                             </div>
                         </div>
 
-                        <div class="row">
-                            <div class="col-lg-3">
-                                <div class="card ks-card-widget ks-widget-messages-inbox">
-                                    <h5 class="card-header">
-                                        Inbox
-
-                                        <div class="dropdown ks-control">
-                                            <a class="btn btn-link ks-no-text ks-no-arrow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="ks-icon la la-ellipsis-h"></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                                                <a class="dropdown-item" href="#">Edit</a>
-                                                <a class="dropdown-item" href="#">Add Card</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </h5>
-                                    <div class="card-block">
-                                        <div class="ks-widget-messages-inbox-items">
-                                            <a href="#" class="ks-widget-messages-inbox-item">
-                                                <div class="ks-widget-messages-inbox-item-avatar ks-avatar ks-online">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-6.jpg')}}" width="36" height="36">
-                                                </div>
-                                                <div class="ks-widget-messages-inbox-item-body">
-                                                    <div class="ks-widget-messages-inbox-item-body-name-and-time">
-                                                        <span class="ks-name">Konstantin Berezhski</span>
-                                                        <span class="ks-time">12:55 pm</span>
-                                                    </div>
-                                                    <p class="ks-widget-messages-inbox-item-body-message">
-                                                        This isn't just about you. It's about wha...
-                                                    </p>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="ks-widget-messages-inbox-item">
-                                                <div class="ks-widget-messages-inbox-item-avatar ks-avatar ks-online">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-4.jpg')}}" width="36" height="36">
-                                                </div>
-                                                <div class="ks-widget-messages-inbox-item-body">
-                                                    <div class="ks-widget-messages-inbox-item-body-name-and-time">
-                                                        <span class="ks-name">Konstantin Berezhski</span>
-                                                        <span class="ks-time">12:55 pm</span>
-                                                    </div>
-                                                    <p class="ks-widget-messages-inbox-item-body-message">
-                                                        This isn't just about you. It's about wha...
-                                                    </p>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="ks-widget-messages-inbox-item">
-                                                <div class="ks-widget-messages-inbox-item-avatar ks-avatar ks-offline">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-2.jpg')}}" width="36" height="36">
-                                                </div>
-                                                <div class="ks-widget-messages-inbox-item-body">
-                                                    <div class="ks-widget-messages-inbox-item-body-name-and-time">
-                                                        <span class="ks-name">Konstantin Berezhski</span>
-                                                        <span class="ks-time">12:55 pm</span>
-                                                    </div>
-                                                    <p class="ks-widget-messages-inbox-item-body-message">
-                                                        This isn't just about you. It's about wha...
-                                                    </p>
-                                                </div>
-                                            </a>
-                                            <a href="#" class="ks-widget-messages-inbox-item">
-                                                <div class="ks-widget-messages-inbox-item-avatar ks-avatar ks-online">
-                                                    <img src="{{asset('user/assets/img/avatars/avatar-13.jpg')}}" width="36" height="36">
-                                                </div>
-                                                <div class="ks-widget-messages-inbox-item-body">
-                                                    <div class="ks-widget-messages-inbox-item-body-name-and-time">
-                                                        <span class="ks-name">Konstantin Berezhski</span>
-                                                        <span class="ks-time">12:55 pm</span>
-                                                    </div>
-                                                    <p class="ks-widget-messages-inbox-item-body-message">
-                                                        This isn't just about you. It's about wha...
-                                                    </p>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-9">
-                                <div class="card ks-card-widget ks-widget-table">
-                                    <h5 class="card-header">
-                                        Recent Activities
-
-                                        <div class="ks-controls">
-                                            <a href="#" class="ks-control-link">View All Invoices</a>
-                                        </div>
-                                    </h5>
-                                    <div class="card-block">
-                                        <table class="table ks-payment-table-invoicing">
-                                            <tr>
-                                                <th width="1">#</th>
-                                                <th>Subject Name</th>
-                                                <th>Start Date</th>
-                                                <th>Due Date</th>
-                                                <th width="1">Status</th>
-                                            </tr>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>English – Paper 1</td>
-                                                <td>March 17, 2017</td>
-                                                <td>March 28, 2017</td>
-                                                <td>
-                                                    <span class="badge badge-cranberry">Delayed</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>English – Paper 1</td>
-                                                <td>March 17, 2017</td>
-                                                <td>March 28, 2017</td>
-                                                <td>
-                                                    <span class="badge badge-crusta">Pending</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>English – Paper 1</td>
-                                                <td>March 17, 2017</td>
-                                                <td>March 28, 2017</td>
-                                                <td>
-                                                    <span class="badge badge-success">Completed</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>4</td>
-                                                <td>English – Paper 1</td>
-                                                <td>March 17, 2017</td>
-                                                <td>March 28, 2017</td>
-                                                <td>
-                                                    <span class="badge badge-crusta">Pnding</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>5</td>
-                                                <td>English – Paper 1</td>
-                                                <td>March 17, 2017</td>
-                                                <td>March 28, 2017</td>
-                                                <td>
-                                                    <span class="badge badge-success">Completed</span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="row">
                             <div class="col-lg-4">
@@ -1841,8 +887,8 @@
                 bindto: '.ks-chart-orders-block',
                 data: {
                     columns: [
-                        ['Revenue', 150, 200, 220, 280, 400, 160, 260, 400, 300, 400, 500, 420, 500, 300, 200, 100, 400, 600, 300, 360, 600],
-                        ['Profit', 350, 300,  200, 140, 200, 30, 200, 100, 400, 600, 300, 200, 100, 50, 200, 600, 300, 500, 30, 200, 320]
+                        ['Sales', 150, 200, 220, 280, 400, 160, 260, 400, 300, 400, 500, 420, 500, 300, 200, 100, 400, 600, 300, 360, 600],
+                        ['Booking', 350, 300,  200, 140, 200, 30, 200, 100, 400, 600, 300, 200, 100, 50, 200, 600, 300, 500, 30, 200, 320]
                     ],
                     colors: {
                         'Revenue': '#f88528',
