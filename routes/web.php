@@ -11,6 +11,7 @@
 |
 */
 
+Route::get('/',"AdminPanelController@index");
 
 Route::get('/cpfcs', function () {
     return view('user.login');
