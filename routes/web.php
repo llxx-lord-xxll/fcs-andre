@@ -11,24 +11,31 @@
 |
 */
 
-Route::get('/',"AdminPanelController@index");
+Route::post('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@login');
 
-Route::get('/cpfcs', function () {
-    return view('user.login');
-});
+        Route::group(['middleware' => ['web']], function() {
+            Route::get('/', function () {
+                return view('welcome');
+            });
+            Route::get('/logout', 'Deep\LoginController@logout');
 
-Route::get('/cpfcs/dashboard', function () {
-    return view('user.dashboard');
-});
+            Route::middleware('web')->get('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@index')->name('login');
 
-Route::get('/cpfcs/posts', function () {
-    return view('user.posts');
-});
+            Route::middleware('auth')->prefix('/'.env('ADMIN_PATH','cp'))->group(function () {
+                Route::get('/', function () {
+                    return view('user.dashboard');
+                })->name('cphome');
 
-Route::get('/cpfcs/users', function () {
-    return view('user.userman');
-});
+                Route::get('/posts', function () {
+                    return view('user.posts');
+                });
 
-Route::get('/cpfcs/chapters', function () {
-    return view('user.chapterman');
-});
+                Route::get('/users', function () {
+                    return view('user.userman');
+                });
+
+                Route::get('/chapters', function () {
+                    return view('user.chapterman');
+                });
+            });
+    });

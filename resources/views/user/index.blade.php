@@ -181,7 +181,7 @@
                             <span class="la la-question-circle ks-icon" aria-hidden="true"></span>
                             <span>Help</span>
                         </a>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{asset('/logout')}}">
                             <span class="la la-sign-out ks-icon" aria-hidden="true"></span>
                             <span>Logout</span>
                         </a>

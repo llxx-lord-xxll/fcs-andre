@@ -13,13 +13,14 @@ class CreateSessionsTable extends Migration
      */
     public function up()
     {
+        $timestamps = [ "created_at" ]; // enable only to created_at
         Schema::create('sessions', function (Blueprint $table) {
-            $table->string('id')->unique();
+            $table->bigIncrements('id')->unique();
             $table->unsignedInteger('user_id')->nullable();
-            $table->string('ip_address', 45)->nullable();
-            $table->text('user_agent')->nullable();
-            $table->text('payload');
-            $table->integer('last_activity');
+            $table->string('ip_address', 45);
+            $table->text('user_agent');
+            $table->text('sescode');
+            $table->timestamp('created_at');
         });
     }
 

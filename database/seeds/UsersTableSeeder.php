@@ -11,21 +11,11 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        //
-        $u = new \App\users();
-        $u->email = "test@futurecitysummit.com";
-        $u->password = bcrypt("test1234");
-        $u->save();
-
-        $u = \App\User::where('id','=',$u->id)->first();
+        $u = \App\User::where('id','=',1)->first();
         $u->assignRole('Super Admin');
 
-        $u = new \App\users();
-        $u->email = "test2@futurecitysummit.com";
-        $u->password = bcrypt("test1234");
-        $u->save();
-
-        $u = \App\User::where('id','=',$u->id)->first();
+        $u = \App\User::where('id','=',2)->first();
         $u->assignRole('Admin');
+
     }
 }
