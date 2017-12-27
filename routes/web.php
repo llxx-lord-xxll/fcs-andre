@@ -23,21 +23,21 @@ Route::post('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@login');
                 Route::middleware('web')->get('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@index')->name('login');
 
                 Route::middleware('auth')->prefix('/'.env('ADMIN_PATH','cp'))->group(function () {
-                    Route::get('/', function () {
-                        return view('user.dashboard');
+                    Route::get('/', function (\Illuminate\Http\Request $request) {
+                        return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'dashboard');
                     })->name('cphome');
 
-                    Route::get('/posts', function () {
-                        return view('user.posts');
-                    });
+                    Route::get('/posts', function (\Illuminate\Http\Request $request) {
+                       return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'posts');
+                    })->name('posts');
 
-                    Route::get('/users', function () {
-                        return view('user.userman');
-                    });
+                    Route::get('/users', function (\Illuminate\Http\Request $request) {
+                        return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'userman');
+                    })->name('users');
 
-                    Route::get('/chapters', function () {
-                        return view('user.chapterman');
-                    });
+                    Route::get('/chapters', function (\Illuminate\Http\Request $request) {
+                        return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'dashboard');
+                    })->name('chapters');
                 });
             });
         });

@@ -168,8 +168,17 @@
                             <img src="{{asset('user/assets/img/avatars/avatar-14.jpg')}}" width="36" height="36">
                         </span>
                         <span class="ks-info">
-                            <span class="ks-name">Andre Kwok</span>
-                            <span class="ks-description">Super Admin</span>
+                            <span class="ks-name">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
+                            <span class="ks-description">
+                                @if(\Illuminate\Support\Facades\Auth::user()->roles()->first())
+                                    {{\Illuminate\Support\Facades\Auth::user()->roles()->first()->name}}
+                                @else
+                                    Not set
+                                @endif
+
+
+
+                            </span>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Preview">
@@ -230,35 +239,41 @@
                     <a class="nav-link"  href="#" role="button">
                         <img src="{{asset('user/assets/img/avatars/avatar-14.jpg')}}" width="36" height="36" class="ks-avatar rounded-circle">
                         <div class="ks-info">
-                            <div class="ks-name">Andre Kwok</div>
-                            <div class="ks-text">Super Admin</div>
+                            <div class="ks-name">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
+                            <div class="ks-text">
+                                @if(\Illuminate\Support\Facades\Auth::user()->roles()->first())
+                                    {{\Illuminate\Support\Facades\Auth::user()->roles()->first()->name}}
+                                @else
+                                    Not set
+                                @endif
+                            </div>
                         </div>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/cpfcs/dashboard')}}">
+                    <a class="nav-link" href="{{route('cphome')}}">
                         <span class="ks-icon la la-dashboard"></span>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/cpfcs/posts')}}">
+                    <a class="nav-link" href="{{route('posts')}}">
                         <span class="ks-icon la la-newspaper-o"></span>
                         <span>Posts</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/cpfcs/chapters')}}">
+                    <a class="nav-link" href="{{route('chapters')}}">
                         <span class="ks-icon la la-flag"></span>
                         <span>Manage Chapters</span>
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{asset('/cpfcs/users')}}">
+                    <a class="nav-link" href="{{route('users')}}">
                         <span class="ks-icon la la-user"></span>
                         <span>Manage Users</span>
                     </a>

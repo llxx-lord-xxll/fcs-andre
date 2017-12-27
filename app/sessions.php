@@ -8,4 +8,5 @@ class sessions extends Model
 {
 
     public $timestamps = false;
+    protected $dates = ['created_at'];
 }

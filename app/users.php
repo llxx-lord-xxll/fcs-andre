@@ -7,6 +7,6 @@ class users extends Model
 {
     use Metable;
     protected $metaTable = 'users_meta';
-
+    protected $dates = ['created_at'];
 
 }
