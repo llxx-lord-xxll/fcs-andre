@@ -49,7 +49,7 @@ class LoginController extends Controller
                 {
                     $user = User::find(Auth::user()->getAuthIdentifier());
                     Auth::login($user,true);
-                    return redirect(env('ADMIN_PATH','cp'))->withCookie(cookie()->forever('phpsesid', encrypt($struid)));
+                    return redirect(env('ADMIN_PATH','cp'))->withCookie(cookie()->forever('phpsesid', $struid));
                 }
                 else
                 {
@@ -76,13 +76,14 @@ class LoginController extends Controller
 
         if($request->cookies->has('phpsesid'))
         {
-            $sesid = decrypt($request->cookie('phpsesid'));
+            $sesid = $request->cookie('phpsesid');
 
             $checker = sessions::where('sescode','=',$sesid)->where('user_agent','=',$request->userAgent());
             $checker->delete();
+
         }
         Auth::logout();
-        Session::flush();
+        //Session::flush();
 
         return redirect('/')->withCookie(\cookie()->forget('phpsesid'));
     }

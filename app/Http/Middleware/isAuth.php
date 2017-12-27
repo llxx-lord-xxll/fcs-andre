@@ -7,6 +7,7 @@ use App\sessions;
 use App\User;
 use Closure;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class isAuth
 {
@@ -17,22 +18,25 @@ class isAuth
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle($request, Closure $next, ...$guards)
     {
         if($request->cookies->has('phpsesid'))
         {
-            $sesid = decrypt(decrypt($request->cookie('phpsesid')));
-
+            $sesid = $request->cookie('phpsesid');
             $checker = sessions::where('sescode','=',$sesid)->where('user_agent','=',$request->userAgent())->first();
             if($checker)
             {
                 $user = User::find($checker->user_id);
                 if($user)
                 {
-                    Auth::login($user,true);
+
+                    if (Auth::check()==false)
+                    {
+                        Auth::login($user,true);
+                    }
+
                 }
-                else
-                {
+                else {
                     $t = new LoginController();
                     $t->logout($request);
                 }
@@ -40,7 +44,7 @@ class isAuth
             else
             {
                 $t = new LoginController();
-                $t->logout($request);
+               $t->logout($request);
             }
         }
         else
@@ -51,4 +55,5 @@ class isAuth
 
         return $next($request);
     }
+
 }
