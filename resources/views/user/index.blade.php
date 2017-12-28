@@ -252,40 +252,46 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('cphome')}}">
+                    <a class="nav-link" href="{{ asset(env('ADMIN_PATH').'/') }}">
                         <span class="ks-icon la la-dashboard"></span>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
+                @can('manage posts')
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('posts')}}">
+                    <a class="nav-link" href="{{ asset(env('ADMIN_PATH').'/posts') }}">
                         <span class="ks-icon la la-newspaper-o"></span>
                         <span>Posts</span>
                     </a>
                 </li>
-
+                @endcan
+                @can('manage chapters')
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('chapters')}}">
+                    <a class="nav-link" href="{{ asset(env('ADMIN_PATH').'/chapters') }}">
                         <span class="ks-icon la la-flag"></span>
                         <span>Manage Chapters</span>
                     </a>
                 </li>
+                @endcan
 
+                @if(auth()->user()->can('manage superadmins') || auth()->user()->can('manage admins'))
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('users')}}">
+                    <a class="nav-link" href="{{ asset(env('ADMIN_PATH').'/users') }}">
                         <span class="ks-icon la la-user"></span>
                         <span>Manage Users</span>
                     </a>
                 </li>
+                @endif
 
+                @can('update settings')
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="{{ asset(env('ADMIN_PATH').'/web-settings') }}">
                         <span class="ks-icon la la-gears"></span>
                         <span>Website Settings</span>
                     </a>
                 </li>
-
+                @endcan
 
             </ul>
         </div>

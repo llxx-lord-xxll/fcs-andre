@@ -17,5 +17,10 @@ class UsersTableSeeder extends Seeder
         $u = \App\User::where('id','=',2)->first();
         $u->assignRole('Admin');
 
+        foreach(\App\User::where('id','>','2')->get() as $user)
+        {
+            $user->assignRole('Chapter Leader');
+        }
+
     }
 }

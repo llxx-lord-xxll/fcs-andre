@@ -12,18 +12,18 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
+        Permission::create(['name' => 'manage users']);
         Permission::create(['name' => 'manage admins']);
         Permission::create(['name' => 'manage superadmins']);
         Permission::create(['name' => 'manage chapterleaders']);
         Permission::create(['name' => 'view web traffic']);
         Permission::create(['name' => 'view chapters']);
         Permission::create(['name' => 'manage chapters']);
-        Permission::create(['name' => 'manage menues']);
         Permission::create(['name' => 'manage pages']);
         Permission::create(['name' => 'manage posts']);
-        Permission::create(['name' => 'manage theme']);
         Permission::create(['name' => 'manage info']);
         Permission::create(['name' => 'update settings']);
+        Permission::create(['name' => 'messenger']);
 
 
         $role = Role::create(['name' => 'Super Admin']);
@@ -33,14 +33,15 @@ class RolesTableSeeder extends Seeder
         $role->givePermissionTo("view chapters");
 
         $role = Role::create(['name' => 'Admin']);
+        $role->givePermissionTo("manage chapterleaders");
         $role->givePermissionTo("manage admins");
-        $role->givePermissionTo("manage menues");
         $role->givePermissionTo("manage pages");
+        $role->givePermissionTo("messenger");
         $role->givePermissionTo("manage posts");
-        $role->givePermissionTo("manage theme");
         $role->givePermissionTo("manage chapters");
+        $role->givePermissionTo("update settings");
 
-
+        $role = Role::create(['name' => 'Chapter Leader']);
 
     }
 }

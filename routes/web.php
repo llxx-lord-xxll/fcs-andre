@@ -23,21 +23,21 @@ Route::post('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@login');
                 Route::middleware('web')->get('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@index')->name('login');
 
                 Route::middleware('auth')->prefix('/'.env('ADMIN_PATH','cp'))->group(function () {
-                    Route::get('/', function (\Illuminate\Http\Request $request) {
-                        return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'dashboard');
-                    })->name('cphome');
 
-                    Route::get('/posts', function (\Illuminate\Http\Request $request) {
-                       return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'posts');
-                    })->name('posts');
 
-                    Route::get('/users', function (\Illuminate\Http\Request $request) {
-                        return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'userman');
-                    })->name('users');
+                    Route::get('/{page}',function (\Illuminate\Http\Request $request,$page)
+                    {
+                        $acp = new App\Http\Controllers\Deep\AdminPanelController();
+                       return $acp->generate_view($request,$page,'');
+                    });
 
-                    Route::get('/chapters', function (\Illuminate\Http\Request $request) {
-                        return (new \App\Http\Controllers\AdminPanelController())->generate_view($request,'dashboard');
-                    })->name('chapters');
+                    Route::get('/',function (\Illuminate\Http\Request $request)
+                    {
+                        $acp = new App\Http\Controllers\Deep\AdminPanelController();
+                       return $acp->generate_view($request,'dashboard','');
+                    });
+                    Route::get('/{page}/{function}',"Deep\AdminPanelController@generate_view");
+
                 });
             });
         });

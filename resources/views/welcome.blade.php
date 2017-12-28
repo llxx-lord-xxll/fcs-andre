@@ -69,7 +69,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ route('cphome') }}">FCS+</a>
+                        <a href="{{ asset(env('ADMIN_PATH').'/') }}">FCS+</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
                     @endauth
