@@ -562,6 +562,12 @@
 
 @section('scripts')
 
+
+    <script src="{{asset('user/libs/d3/d3.min.js')}}"></script>
+    <script src="{{asset('user/libs/c3js/c3.min.js')}}"></script>
+    <script src="{{asset('user/libs/noty/noty.min.js')}}"></script>
+    <script src="{{asset('user/libs/maplace/maplace.min.js')}}"></script>
+    <script src="https://maps.google.com/maps/api/js?libraries=geometry&v=3.26&key=AIzaSyBBjLDxcCjc4s9ngpR11uwBWXRhyp3KPYM"></script>
     <script type="application/javascript">
         (function ($) {
             $(document).ready(function () {

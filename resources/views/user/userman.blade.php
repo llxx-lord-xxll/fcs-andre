@@ -41,7 +41,7 @@
                             <table id="ks-datatable" class="table table-striped table-bordered" width="100%">
                                 <thead>
                                 <tr>
-                                    <th></th>
+                                    <th><input id="cbox_select_all" type="checkbox"></th>
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>Roles</th>
@@ -63,7 +63,7 @@
                                     @foreach($users as $user)
 
                                         <tr>
-                                            <td><input type="checkbox" name="sel_user" value="{{$user[0]}}"></td>
+                                            <td><input type="checkbox" class="sel_user" value="{{$user[0]}}"></td>
                                             <td>{{$user[1]}}</td>
                                             <td>{{$user[2]}}</td>
                                             <td>{{$user[3]}}</td>
@@ -93,6 +93,7 @@
         (function ($) {
             $(document).ready(function() {
                 $('#ks-datatable').DataTable({
+                    "order":[[ 1, "asc" ]],
                     "initComplete": function () {
                         $('.dataTables_wrapper select').select2({
                             minimumResultsForSearch: Infinity

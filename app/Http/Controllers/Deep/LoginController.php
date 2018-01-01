@@ -38,13 +38,11 @@ class LoginController extends Controller
         if($request->has('email') && $request->has('pw')) {
             if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('pw'), 'status' => 1])) {
                 $struid = md5(uniqid());
-                $ses = new sessions();
+                $ses = new sessions;
                 $ses->user_id = Auth::user()->id;
                 $ses->sescode = $struid;
                 $ses->ip_address = $request->ip();
                 $ses->user_agent = $request->userAgent();
-                $ses->created_at = Carbon::now();
-
                 if($ses->save())
                 {
                     $user = User::find(Auth::user()->getAuthIdentifier());
@@ -84,9 +82,10 @@ class LoginController extends Controller
         }
         Auth::logout();
         //Session::flush();
-
         return redirect('/')->withCookie(\cookie()->forget('phpsesid'));
     }
+
+
     public function index(Request $request)
     {
         if (Auth::check())

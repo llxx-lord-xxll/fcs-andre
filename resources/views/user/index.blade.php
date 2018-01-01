@@ -8,6 +8,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link rel="stylesheet" type="text/css" href="{{asset('user/libs/bootstrap/css/bootstrap.min.css')}}">
@@ -20,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('user/libs/jscrollpane/jquery.jscrollpane.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('user/libs/flag-icon-css/css/flag-icon.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('user/assets/styles/common.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('user/libs/noty/noty.css')}}">
     <!-- END GLOBAL MANDATORY STYLES -->
 
     <!-- BEGIN THEME STYLES -->
@@ -112,7 +114,7 @@
                                 <div class="ks-wrapper ks-scrollable">
                                     <a href="#" class="ks-notification">
                                         <div class="ks-avatar">
-                                            <img src="{{asset('user/assets/img/avatars/avatar-3.jpg')}}" width="36" height="36">
+                                            <img src="{{asset((new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar())}}" width="36" height="36">
                                         </div>
                                         <div class="ks-info">
                                             <div class="ks-user-name">Arifuzzaman <span class="ks-description">has created a chapter</span></div>
@@ -165,7 +167,7 @@
                 <div class="nav-item dropdown ks-user">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="ks-avatar">
-                            <img src="{{asset('user/assets/img/avatars/avatar-14.jpg')}}" width="36" height="36">
+                            <img src="{{asset((new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar())}}" width="36" height="36">
                         </span>
                         <span class="ks-info">
                             <span class="ks-name">{{\Illuminate\Support\Facades\Auth::user()->name}}</span>
@@ -175,14 +177,11 @@
                                 @else
                                     Not set
                                 @endif
-
-
-
                             </span>
                         </span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="Preview">
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{ asset(env('ADMIN_PATH').'/myprofile') }}">
                             <span class="la la-user ks-icon"></span>
                             <span>Profile</span>
                         </a>
@@ -237,7 +236,7 @@
             <ul class="nav nav-pills nav-stacked">
                 <li class="nav-item ks-user dropdown">
                     <a class="nav-link"  href="#" role="button">
-                        <img src="{{asset('user/assets/img/avatars/avatar-14.jpg')}}" width="36" height="36" class="ks-avatar rounded-circle">
+                        <img src="{{asset((new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar())}}" width="36" height="36" class="ks-avatar rounded-circle">
                         <div class="ks-info">
                             <div class="ks-name">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
                             <div class="ks-text">
@@ -257,6 +256,15 @@
                         <span>Dashboard</span>
                     </a>
                 </li>
+
+                @can('messenger')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ asset(env('ADMIN_PATH').'/messages') }}">
+                            <span class="ks-icon la la-newspaper-o"></span>
+                            <span>Messages</span>
+                        </a>
+                    </li>
+                @endcan
 
                 @can('manage posts')
                 <li class="nav-item">
@@ -320,14 +328,7 @@
 <script src="{{asset('user/assets/scripts/common.min.js')}}"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
 
-<script src="{{asset('user/libs/d3/d3.min.js')}}"></script>
-<script src="{{asset('user/libs/c3js/c3.min.js')}}"></script>
-<script src="{{asset('user/libs/noty/noty.min.js')}}"></script>
-<script src="{{asset('user/libs/maplace/maplace.min.js')}}"></script>
-<script src="https://maps.google.com/maps/api/js?libraries=geometry&v=3.26&key=AIzaSyBBjLDxcCjc4s9ngpR11uwBWXRhyp3KPYM"></script>
 @yield('scripts')
-
-
 
 <div class="ks-mobile-overlay"></div>
 

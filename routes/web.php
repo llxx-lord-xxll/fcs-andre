@@ -24,7 +24,6 @@ Route::post('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@login');
 
                 Route::middleware('auth')->prefix('/'.env('ADMIN_PATH','cp'))->group(function () {
 
-
                     Route::get('/{page}',function (\Illuminate\Http\Request $request,$page)
                     {
                         $acp = new App\Http\Controllers\Deep\AdminPanelController();
@@ -37,6 +36,20 @@ Route::post('/'.env('ADMIN_LOGIN','login'),'Deep\LoginController@login');
                        return $acp->generate_view($request,'dashboard','');
                     });
                     Route::get('/{page}/{function}',"Deep\AdminPanelController@generate_view");
+
+
+                    Route::post('/{page}',function (\Illuminate\Http\Request $request,$page)
+                    {
+                        $acp = new App\Http\Controllers\Deep\AdminPanelController();
+                        return $acp->handle_posts($request,$page,'');
+                    });
+
+                    Route::post('/',function (\Illuminate\Http\Request $request)
+                    {
+                        $acp = new App\Http\Controllers\Deep\AdminPanelController();
+                        return $acp->handle_posts($request,'dashboard','');
+                    });
+                    Route::post('/{page}/{function}',"Deep\AdminPanelController@handle_posts");
 
                 });
             });
