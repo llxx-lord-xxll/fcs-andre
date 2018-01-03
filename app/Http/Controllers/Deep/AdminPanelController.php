@@ -9,6 +9,7 @@ use App\users;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Spatie\Permission\Models\Role;
 use Illuminate\Validation\Rule;
@@ -188,7 +189,7 @@ class AdminPanelController extends Controller
                         ]);
 
                         if ($validator->fails()) {
-                            array_push($resp,array('error','Image could not be uploaded'));
+                            array_push($resp,array('status'=>'error','msg'=>'Image could not be uploaded'));
                         }
                         else
                         {
@@ -199,7 +200,7 @@ class AdminPanelController extends Controller
                             $avsave->setMeta('avatar',$avatar);
                             $avsave->save();
 
-                            array_push($resp,array('success','Image uploaded successfully'));
+                            array_push($resp,array('status'=>'success','msg'=>'Image uploaded successfully'));
                         }
 
 
@@ -214,7 +215,7 @@ class AdminPanelController extends Controller
                         ]);
 
                         if ($validator->fails()) {
-                            array_push($resp,array('error','Image could not be uploaded'));
+                            array_push($resp,array('status'=>'error','msg'=>'Image could not be uploaded'));
                         }
                         else
                         {
@@ -228,19 +229,151 @@ class AdminPanelController extends Controller
                             $u->setMeta('po',$request->input('po'));
                             $u->setMeta('headline',$request->input('headline'));
                             $u->save();
-                            array_push($resp,array('success','Contact info updated successfully'));
+                            array_push($resp,array('status'=>'success','msg'=>'Contact info updated successfully'));
                         }
 
 
 
                         break;
+
+                    case 'experience':
+                        $validator = Validator::make($request->all(),[
+                            'xpsubmit' => 'required'
+                        ]);
+
+
+                        if ($validator->fails()) {
+                            array_push($resp,array('status'=>'error','msg'=>'Work could not be added'));
+                        }
+                        else
+                        {
+                            if ($request->input('xpsubmit') == "add")
+                            {
+                                $validator = Validator::make($request->all(),[
+                                    'xpsubmit' => 'required',
+                                    'company' => 'required',
+                                    'title' => 'required',
+                                    'from' => 'required'
+                                ]);
+                                if ($validator->fails()) {
+                                    array_push($resp,array('status'=>'error','msg'=>'Work could not be added'));
+                                }
+                                else{
+                                    $ts = $request->all();
+                                    unset($ts['_token']);
+                                    $ts = json_encode($ts);
+                                    users::find(Auth::user()->getAuthIdentifier())->insertMeta('work',$ts);
+                                    array_push($resp,array('status'=>'success','msg'=>'Work added successfully'));
+                                }
+                            }
+                            elseif ($request->input('xpsubmit') == "del")
+                            {
+                                $validator = Validator::make($request->all(),[
+                                    'xpsubmit' => 'required',
+                                    'content' => 'required',
+                                ]);
+                                if ($validator->fails()) {
+                                    array_push($resp,array('status'=>'error','msg'=>'Work could not be deleted'));
+                                }
+                                else{
+                                    $um = DB::table('users_meta')->where('id','=',$request->input('content'));
+                                    if ($um->first())
+                                    {
+                                        if ($um->first()->users_id == Auth::user()->getAuthIdentifier())
+                                        {
+                                            $um->delete();
+                                            array_push($resp,array('status'=>'success','msg'=>'Work deleted successfully'));
+                                        }
+                                        else{
+                                            array_push($resp,array('status'=>'error','msg'=>'Work could not be deleted'));
+                                        }
+                                    }
+                                    else{
+                                        array_push($resp,array('status'=>'error','msg'=>'Work could not be deleted'));
+                                    }
+                                }
+
+                            }
+
+
+                        }
+
+
+                        break;
+
+                    case 'education':
+                        $validator = Validator::make($request->all(),[
+                            'edusubmit' => 'required'
+                        ]);
+
+
+                        if ($validator->fails()) {
+                            array_push($resp,array('status'=>'error','msg'=>'Work could not be added'));
+                        }
+                        else
+                        {
+                            if ($request->input('edusubmit') == "add")
+                            {
+                                $validator = Validator::make($request->all(),[
+                                    'edusubmit' => 'required',
+                                    'institue' => 'required',
+                                    'degree' => 'required',
+                                    'group' => 'required',
+                                    'from' => 'required'
+                                ]);
+                                if ($validator->fails()) {
+                                    array_push($resp,array('status'=>'error','msg'=>'Work could not be added'));
+                                }
+                                else{
+                                    $ts = $request->all();
+                                    unset($ts['_token']);
+                                    $ts = json_encode($ts);
+                                    users::find(Auth::user()->getAuthIdentifier())->insertMeta('education',$ts);
+                                    array_push($resp,array('status'=>'success','msg'=>'Education added successfully'));
+                                }
+                            }
+                            elseif ($request->input('edusubmit') == "del")
+                            {
+                                $validator = Validator::make($request->all(),[
+                                    'edusubmit' => 'required',
+                                    'content' => 'required',
+                                ]);
+                                if ($validator->fails()) {
+                                    array_push($resp,array('status'=>'error','msg'=>'Education could not be deleted'));
+                                }
+                                else{
+                                    $um = DB::table('users_meta')->where('id','=',$request->input('content'));
+                                    if ($um->first())
+                                    {
+                                        if ($um->first()->users_id == Auth::user()->getAuthIdentifier())
+                                        {
+                                            $um->delete();
+                                            array_push($resp,array('status'=>'success','msg'=>'Education deleted successfully'));
+                                        }
+                                        else{
+                                            array_push($resp,array('status'=>'error','msg'=>'Education could not be deleted'));
+                                        }
+                                    }
+                                    else{
+                                        array_push($resp,array('status'=>'error','msg'=>'Education could not be deleted'));
+                                    }
+
+                                }
+
+                            }
+
+
+                        }
+
+
+                        break;
                     default:
-                        array_push($resp,array('error','Method not allowed'));
+                        array_push($resp,array('status'=>'error','msg'=>'Method not allowed'));
                         break;
                 }
                 break;
             default:
-                array_push($resp,array('error','Method not allowed'));
+                array_push($resp,array('status'=>'error','msg'=>'Method not allowed'));
                 break;
         }
         return json_encode($resp);

@@ -399,11 +399,18 @@
     <script type="application/javascript">
         (function ($) {
             $(document).ready(function() {
-                $('select').select2({
-                    minimumResultsForSearch: Infinity
-                });
+
+
+                $(".ks-selectpicker[name=country]").select2();
+                $(".ks-selectpicker[name=state]").select2();
+                $(".ks-selectpicker[name=country]").val('{{\App\users::find(\Illuminate\Support\Facades\Auth::user()->getAuthIdentifier())->getMeta('country')}}').trigger('change');
+                $(".ks-selectpicker[name=state]").val('{{\App\users::find(\Illuminate\Support\Facades\Auth::user()->getAuthIdentifier())->getMeta('state')}}').trigger('change');
+
+
             });
         })(jQuery);
+
+
     </script>
 
     <script type="text/javascript">
@@ -417,16 +424,13 @@
             focusInvalid: false, // do not focus the last invalid input
             ignore: "",  // validate all fields including form hidden input
             rules: {
-                name: {
+                company: {
                     required: true,
                 },
-                mob: {
+                title: {
                     required: true
                 },
-                country: {
-                    required: true
-                },
-                city: {
+                from: {
                     required: true
                 }
             },
@@ -453,7 +457,8 @@
 
             submitHandler: function (form) {
 
-                $.post('', cif.serialize())
+                $.post('', cif.serialize());
+
                 new Noty({
                     text: 'Information Updated',
                     type   : 'success',
@@ -461,12 +466,14 @@
                     layout : 'bottomRight',
                     timeout: 2000
                 }).show();
+
             }
         });
 
-        cif.onSubmit(function (e) {
+
+        $(document).on('submit','#cif',function(e){
             e.preventDefault();
-        })
+        });
 
     </script>
 @endsection
