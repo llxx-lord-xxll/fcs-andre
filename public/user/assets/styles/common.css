@@ -7625,3 +7625,6 @@ body.ks-sidebar-compact:not(.ks-sidebar-compact-open).ks-sidebar-sections > .ks-
     color: #333333;
     font-weight: 500;
     margin-bottom: 40px; }
+  .search-panel > div > div{
+    margin-top: 10px;
+  }

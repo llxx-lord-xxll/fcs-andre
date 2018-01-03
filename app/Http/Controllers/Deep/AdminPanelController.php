@@ -31,11 +31,17 @@ class AdminPanelController extends Controller
             case 'chapters':
 
                 break;
+            case 'search':
+                return $this->process_view_search($request,$function);
+                break;
+            case '+':
+                return $this->process_view_profile($request,$function);
+                break;
             case 'myprofile':
                 return $this->process_view_myprofile($request,$function);
                 break;
             default:
-
+                return view('user.404');
                 break;
         }
     }
@@ -99,6 +105,52 @@ class AdminPanelController extends Controller
         $v->with('users',$arrUsers);
 
         return $v;
+    }
+    function process_view_search(Request $request,$function)
+    {
+        $v = view('user.search');
+        if ($request->has('where'))
+        {
+            $arrProf = array();
+
+            foreach (User::where('name','like','%'.$request->input('where').'%')->get() as $u)
+            {
+                $avatar = $this->get_avatar($u->id);
+                $gender = users::find($u->id)->getMeta('gender');
+                $headline = users::find($u->id)->getMeta('headline');
+                $uname = users::find($u->id)->getMeta('username');
+                if ($uname==null)
+                {
+                    $um = users::find($u->id);
+                    $um->setMeta('username',uniqid('usr-'));
+                    $um->save();
+                    $uname = users::find($u->id)->getMeta('username');
+                }
+
+
+                array_push($arrProf,array('id'=>$uname,'avatar'=>$avatar,'name'=>$u->name,'gender'=>$gender,'role'=>$u->roles()->first()->name,'headline'=>$headline));
+            }
+
+            return $v->with('arrProf',$arrProf);
+
+        }
+    }
+    function process_view_profile(Request $request,$function)
+    {
+        $v = view('user.profile');
+        $u = (new users())->getByMeta('username',$function)->first();
+        if ($u)
+        {
+            $u = User::find($u->users_id);
+            $v = $v->with('u',$u);
+
+        }
+        else{
+            $v = view('user.404');
+        }
+
+
+       return $v;
     }
 
     function get_users($filter = null)
@@ -174,7 +226,6 @@ class AdminPanelController extends Controller
 
         return $avatar;
     }
-
     public function handle_posts(Request $request,$page,$function)
     {
         $resp = array();

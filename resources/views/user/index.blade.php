@@ -65,13 +65,13 @@
         <nav class="nav navbar-nav">
             <!-- BEGIN NAVBAR MENU -->
             <div class="ks-navbar-menu">
-                <form class="ks-search-form">
+                <form class="ks-search-form" method="get" action="{{asset(env('ADMIN_PATH').'/'.'search')}}">
                     <a class="ks-search-open" href="#">
                         <span class="la la-search"></span>
                     </a>
                     <div class="ks-wrapper">
                         <div class="input-icon icon-right icon icon-lg icon-color-primary">
-                            <input id="input-group-icon-text" type="text" class="form-control" placeholder="Search...">
+                            <input id="input-group-icon-text" name="where" type="text" class="form-control" placeholder="Search...">
                             <span class="icon-addon">
                                 <span class="la la-search ks-icon"></span>
                             </span>
@@ -93,7 +93,7 @@
                 <div class="nav-item dropdown ks-notifications">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         <span class="la la-bell ks-icon" aria-hidden="true">
-                            <span class="badge badge-pill badge-info">7</span>
+
                         </span>
                         <span class="ks-text">Notifications</span>
                     </a>
