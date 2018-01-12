@@ -43,5 +43,7 @@ class RolesTableSeeder extends Seeder
 
         $role = Role::create(['name' => 'Chapter Leader']);
 
+
+
     }
 }

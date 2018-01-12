@@ -32,7 +32,7 @@
                                         <div class="card-block">
                                             <h5 class="card-title"> {{$profile['name']}}</h5>
                                             <p class="card-text">{{$profile['headline']}}</p>
-                                            <a href="{{asset(env('ADMIN_PATH').'/'.'+/'.$profile['id'])}}" class="btn btn-success"><span class="la la-align-center la-comment" style="font-size: 20px"></span></a>
+                                            <a href="{{asset(env('ADMIN_PATH').'/'."messages/create?user=".$profile['id'] )}}" class="btn btn-success"><span class="la la-align-center la-comment" style="font-size: 20px"></span></a>
                                             <a href="{{asset(env('ADMIN_PATH').'/'.'+/'.$profile['id'])}}" class="btn btn-primary"><span class="la la-align-center la-eye" style="font-size: 20px"></span></a>
                                         </div>
                                     </div>

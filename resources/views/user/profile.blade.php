@@ -32,8 +32,12 @@
                             <div class="ks-description">{{\App\users::find(\Illuminate\Support\Facades\Auth::user()->getAuthIdentifier())->getMeta('gender')}}</div>
                             <div class="ks-description">Lives in {{\App\users::find($u->id)->getMeta('city')}}, {{\App\users::find($u->id)->getMeta('country')}}</div>
                         @endif
+                        <div>
+                            <a class="btn btn-success" href="{{asset(env('ADMIN_PATH').'/'."messages/create?user=".\App\users::find($u->id)->getMeta('username') )}}">Send Message</a>
+                        </div>
                     </div>
                 </div>
+
 
             </div>
             <div class="ks-tabs-container ks-tabs-default ks-tabs-no-separator ks-full ks-light">
@@ -47,6 +51,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="tab" data-target="#orders" aria-expanded="false">Works &amp; Experiences</a>
                     </li>
+
                     <!--
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="tab" data-target="#wish-list" aria-expanded="false">Wish list</a>

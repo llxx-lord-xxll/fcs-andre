@@ -15,6 +15,8 @@ trait meta_ext
         $tbl->insert(
             ['id'=>null,$this->getMetaKeyName() => $this->id, 'type'=>'string', 'key'=>$key,'value'=>$content,'created_at'=>Carbon::now(),'updated_at'=>Carbon::now()]
         );
+        $this->updated_at = Carbon::now();
+        $this->save();
         return true;
     }
 

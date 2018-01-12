@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Deep;
 
 use App\Http\Controllers\Controller;
+use App\messages;
 use App\sessions;
 use App\User;
 use App\users;
+use Carbon\Carbon;
 use Faker\Provider\File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +31,11 @@ class AdminPanelController extends Controller
 
                 break;
             case 'chapters':
+
+
+                break;
+            case 'messages':
+                return $this->process_view_message($request,$function);
 
                 break;
             case 'search':
@@ -152,6 +159,60 @@ class AdminPanelController extends Controller
 
        return $v;
     }
+    function process_view_message(Request $request,$function)
+    {
+        $v = view('user.messages');
+        switch ($function)
+        {
+            case 'create':
+
+                if ($request->has('user'))
+                {
+                    $usr = (new users())->getByMeta('username',$request->input('user'))->first();
+                    $msg = false;
+                    if($usr)
+                    {
+                        $myconvs = (new messages())->getByMeta('participant', Auth::user()->getAuthIdentifier());
+
+                        foreach ($myconvs->get() as $myconv)
+                        {
+
+                            $mysingconv = messages::find($myconv->messages_id);
+                            if($mysingconv->getByMeta('participant')->count() == 2)
+                            {
+                                if($mysingconv->getByMeta('participant',$usr->users_id)->first())
+                                {
+                                    $msg = $mysingconv;
+                                    break;
+                                }
+                            }
+                        }
+
+                        if($msg)
+                        {
+                            return redirect('/'.env('ADMIN_PATH').'/messages/#'. $msg->id);
+                        }
+                        else
+                        {
+                            $msg = new  messages() ;
+                            $msg->created_by = Auth::user()->getAuthIdentifier();
+                            $msg->created_at = Carbon::now();
+                            $msg->save();
+                            $msg->insertMeta('participant',Auth::user()->getAuthIdentifier());
+                            $msg->insertMeta('participant',$usr->users_id);
+                            return redirect('/'.env('ADMIN_PATH').'/messages/'. $msg->id);
+                        }
+                    }
+                }
+
+                break;
+            default:
+
+                break;
+        }
+
+        return $v;
+    }
 
     function get_users($filter = null)
     {
@@ -226,8 +287,19 @@ class AdminPanelController extends Controller
 
         return $avatar;
     }
+    function array_sort_by_column(&$array, $column, $direction = SORT_DESC) {
+        $reference_array = array();
+
+        foreach($array as $key => $row) {
+            $reference_array[$key] = $row[$column];
+        }
+
+        array_multisort($reference_array, $direction, $array);
+    }
+
     public function handle_posts(Request $request,$page,$function)
     {
+
         $resp = array();
         switch ($page)
         {
@@ -421,6 +493,176 @@ class AdminPanelController extends Controller
                     default:
                         array_push($resp,array('status'=>'error','msg'=>'Method not allowed'));
                         break;
+                }
+                break;
+            case 'messages':
+                switch ($function)
+                {
+                    case 'get_conversations':
+
+                        $myconvs = (new messages())->getByMeta('participant', Auth::user()->getAuthIdentifier());
+                        $myconvarray = array();
+
+                        foreach ($myconvs->get() as $myconv)
+                        {
+                            $msg_title = "";
+                            $msg_type = "";
+                            $msg_short = "";
+                            $mysingconv = messages::find($myconv->messages_id);
+
+                            if($mysingconv->getByMeta('participant')->count() == 2)
+                            {
+                                $msg_type = "private";
+                                foreach ($mysingconv->getByMeta('participant')->get() as $otherpart)
+                                {
+                                    if ($otherpart->value != Auth::user()->getAuthIdentifier())
+                                    {
+                                        $msg_title = users::find($otherpart->value)->name;
+                                    }
+                                }
+                                if ($msg_title=="")
+                                {
+                                    $msg_title = "You";
+                                }
+                            }
+                            else
+                            {
+                                $msg_type = "group";
+                                $gt = $mysingconv->getMeta('title')->first();
+                                $msg_title  = $gt?$gt->value:"Group Chat";
+                            }
+
+                            if($mysingconv->getByMeta('message')->count() >0)
+                            {
+                                $msg_short = json_decode($mysingconv->getByMeta('message')->orderBy('id','DESC')->first()->value,true);
+                                if($msg_short)
+                                {
+                                    $msg_short = '<span style="font-weight: bold;">'.User::find($msg_short['sender'])->name.'</span>' . ": " . substr($msg_short['msg'],0,15) . "...";
+                                }
+                            }
+
+                            $tmpArray = array($mysingconv->id,$msg_title,$msg_type,$msg_short,Carbon::parse($mysingconv->updated_at)->toDateTimeString());
+                            if(!in_array($tmpArray,$myconvarray))
+                            {
+                                array_push($myconvarray,$tmpArray);
+                            }
+                        }
+                        $this->array_sort_by_column($myconvarray, '4');
+
+
+                        array_push($resp,array('status'=>'success','msg'=>'Conversations listed','content'=>$myconvarray));
+                        break;
+                    case 'get_dis_info':
+                        $arrDisInfo = array();
+                            if($request->has('convid'))
+                            {
+                                $conv = messages::find($request->input('convid'));
+                                $msgs = array();
+                                $participants = array();
+                                $msgsModel = $conv->getByMeta('message')->orderBy('id','ASC')->take(30);
+                                $participantsModel = $conv->getByMeta('participant');
+
+                                foreach ($msgsModel->get() as $msg)
+                                {
+                                    $msgval = json_decode($msg->value,true);
+                                    $msgsender = users::find($msgval['sender']);
+                                    if($msgsender)
+                                    {
+                                        $msgsender = array('name' => $msgsender->name,'username'=>$msgsender->getMeta('username'),'avatar'=>asset( (new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar($msgval['sender'])),'self' => Auth::user()->getAuthIdentifier()== $msgsender->id);
+                                    }
+                                    else
+                                    {
+                                        $msgsender = array('name' => 'Unknown','username'=>'','avatar'=>'','self'=>'');
+                                    }
+
+
+                                    array_push($msgs,array('sender'=>$msgsender,'msg'=>$msgval['msg'],'time'=>Carbon::parse($msg->created_at)->format('d-M-Y g:i:s A')));
+                                }
+
+                                foreach ($participantsModel->get() as $participant)
+                                {
+                                    $user = users::find($participant->value);
+                                    if($user)
+                                    {
+                                        $the_part = array('name' => $user->name,'username'=>$user->getMeta('username'),'avatar'=>asset( (new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar($user->id)),'admin'=>($conv->created_by==$user->id));
+                                    }
+                                    else
+                                    {
+                                        $the_part = array('name' => 'Unknown','username'=>'','avatar'=>'');
+                                    }
+
+                                    array_push($participants,$the_part);
+                                }
+
+
+
+                                $msg_title = "";
+
+                                if($conv->getByMeta('participant')->count()>2) {
+                                    $gt = $conv->getMeta('title')->first();
+                                    $msg_title = $gt ? $gt->value : "Group Chat";
+                                }else{
+
+                                    foreach ($conv->getByMeta('participant')->get() as $otherpart)
+                                    {
+                                        if ($otherpart->value != Auth::user()->getAuthIdentifier())
+                                        {
+                                            $msg_title = users::find($otherpart->value)->name;
+                                        }
+                                    }
+                                    if ($msg_title=="")
+                                    {
+                                        $msg_title = "You";
+                                    }
+                                }
+
+
+                                if ($conv)
+                                {
+                                    array_push($arrDisInfo,array($conv->id,$msg_title,$conv->created_by,Carbon::parse($conv->created_at)->format('d-M-Y g:i:s A'),$conv->getByMeta('participant')->count(),$msgs,$participants,Carbon::parse($conv->updated_at)->format('d-M-Y g:i:s A')));
+                                }
+                                else
+                                {
+                                    array_push($resp,array('status'=>'error','msg'=>'Invalid conversation ID passed'));
+                                }
+                            }
+                            else
+                            {
+                                array_push($resp,array('status'=>'error','msg'=>'Method not allowed'));
+                            }
+                        array_push($resp,array('status'=>'success','msg'=>'Conversation show successful','content'=>$arrDisInfo));
+                        break;
+
+                    case 'send_message':
+                        $validator = Validator::make($request->all(),[
+                            'convid' => 'required|integer',
+                            'message' => 'required|string'
+                        ]);
+
+                        if ($validator->fails()) {
+                            array_push($resp,array('status'=>'error','msg'=>'Message could not be sent'));
+                        }
+                        else
+                        {
+
+                            $conv = messages::find($request->input('convid'));
+                            if($conv->getByMeta('participant',Auth::user()->getAuthIdentifier())->first())
+                            {
+                                $arrMsgPack = array('sender'=>Auth::user()->getAuthIdentifier(),'msg'=>$request->input('message'));
+                                $conv->insertMeta('message',json_encode($arrMsgPack));
+                                array_push($resp,array('status'=>'success','msg'=>'Message sent!'));
+                            }
+                            else
+                            {
+                                array_push($resp,array('status'=>'error','msg'=>'Method not allowed'));
+                            }
+
+                        }
+                        break;
+                    default:
+
+                        break;
+
                 }
                 break;
             default:
