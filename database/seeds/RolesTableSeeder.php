@@ -42,6 +42,7 @@ class RolesTableSeeder extends Seeder
         $role->givePermissionTo("update settings");
 
         $role = Role::create(['name' => 'Chapter Leader']);
+        $role->givePermissionTo("messenger");
 
 
 

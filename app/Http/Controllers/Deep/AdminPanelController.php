@@ -559,10 +559,10 @@ class AdminPanelController extends Controller
                                 $conv = messages::find($request->input('convid'));
                                 $msgs = array();
                                 $participants = array();
-                                $msgsModel = $conv->getByMeta('message')->orderBy('id','ASC')->take(30);
+                                $msgsModel = $conv->getByMeta('message')->orderBy('id','DESC')->take(30);
                                 $participantsModel = $conv->getByMeta('participant');
 
-                                foreach ($msgsModel->get() as $msg)
+                                foreach ($msgsModel->get()->reverse() as $msg)
                                 {
                                     $msgval = json_decode($msg->value,true);
                                     $msgsender = users::find($msgval['sender']);
@@ -578,6 +578,7 @@ class AdminPanelController extends Controller
 
                                     array_push($msgs,array('sender'=>$msgsender,'msg'=>$msgval['msg'],'time'=>Carbon::parse($msg->created_at)->format('d-M-Y g:i:s A')));
                                 }
+
 
                                 foreach ($participantsModel->get() as $participant)
                                 {
