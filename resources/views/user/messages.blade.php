@@ -183,13 +183,13 @@
                                                 </tr>
                                                 <tr>
                                                     <td>
-                                                        <img src="{{asset('user/assets/img/smiley/in-love-2.png') }}" data-content="(love-2)"  width="20" height="20">
+                                                        <img src="{{asset('user/assets/img/smiley/in-love-2.png') }}" data-content="(in-love-2)"  width="20" height="20">
                                                     </td>
                                                     <td>
-                                                        <img src="{{asset('user/assets/img/smiley/in-love-3.png') }}" data-content="(love-3)"  width="20" height="20">
+                                                        <img src="{{asset('user/assets/img/smiley/in-love-3.png') }}" data-content="(in-love-3)"  width="20" height="20">
                                                     </td>
                                                     <td>
-                                                        <img src="{{asset('user/assets/img/smiley/in-love-4.png') }}" data-content="(love-4)"  width="20" height="20">
+                                                        <img src="{{asset('user/assets/img/smiley/in-love-4.png') }}" data-content="(in-love-4)"  width="20" height="20">
                                                     </td>
                                                     <td>
                                                         <img src="{{asset('user/assets/img/smiley/joyful-2.png') }}" data-content="(joyful-2)"  width="20" height="20">
@@ -282,9 +282,9 @@
             "(happy-10)",
             "(happy-11)",
             "(hipster-2)",
-            "(love-2)",
-            "(love-3)",
-            "(love-4)",
+            "(in-love-2)",
+            "(in-love-3)",
+            "(in-love-4)",
             "(joyful-2)",
             "(kiss-1)"];
 
@@ -321,9 +321,6 @@
                     },1000);
                     return false;
                 }
-
-                console.log(JSON.stringify(dmsg)  + "\n\n\n\n" + JSON.stringify(jQuery.parseJSON(data)));
-
                 dmsg = jQuery.parseJSON(data);
                 var cmsg = jQuery.parseJSON(JSON.stringify(dmsg[0].content[0]));
                 cid = cmsg[0];
@@ -343,19 +340,19 @@
                 $.each(cmsg[5],function (key,data) {
                     var sender = data['sender'];
                     smileys.forEach(function (value) {
-                        data['msg'] =  data['msg'].toString().replace(value,'<img src="{{asset('user/assets/img/smiley/') }}' + '/' + value.replace(")",'').replace("(",'') + '.png" title="'+value+'" width="20" height="20">');
+                        data['msg'] =  data['msg'].toString().replace((new RegExp("\\(" + value + "\\)","g")),'<img src="{{asset('user/assets/img/smiley/') }}' + '/' + value.replace(")",'').replace("(",'') + '.png" title="'+value+'" width="20" height="20">');
                     });
-                    $('.ks-messages>.ks-body .ks-items').append('<li class="ks-item ks-'+(sender['self']?"self":"from")+'"><span class="ks-avatar ks-offline"><img src="'+sender['avatar']+ '" width="36" height="36" class="rounded-circle"></span><div class="ks-body"><div class="ks-header"><span class="ks-name">'+sender['name']+'</span><span class="ks-datetime">'+data['time']+'</span></div><div class="ks-message">'+data['msg']+'</div></div></li>')
+                    $('.ks-messages>.ks-body .ks-items').append('<li class="ks-item ks-'+(sender['self']?"self":"from")+'"><span class="ks-avatar ks-'+(sender['online']?"online":"offline")+'"><img src="'+sender['avatar']+ '" width="36" height="36" class="rounded-circle"></span><div class="ks-body"><div class="ks-header"><span class="ks-name">'+sender['name']+'</span><span class="ks-datetime">'+data['time']+'</span></div><div class="ks-message">'+data['msg']+'</div></div></li>')
                 });
 
                 cmsg[6].forEach(function (data,key) {
                     if(data['admin'])
                     {
-                        ksConvInfo.find('.ks-body>.ks-list>.ks-items').append('<div class="ks-item ks-user"><span class="ks-avatar ks-online"> <a href="'+window.location.href.split('messages')[0] + '+/' + data['username']+'"> <img src="'+ data['avatar']+'" width="36" height="36" class="img-circle"> </a> </span> <span class="ks-owner"> <span class="ks-name">'+data['name']+'</span> <span class="badge badge-success ks-label-sm">Admin</span> </span> </div>');
+                        ksConvInfo.find('.ks-body>.ks-list>.ks-items').append('<div class="ks-item ks-user"><span class="ks-avatar ks-'+(data['online']?"online":"offline")+'"> <a href="'+window.location.href.split('messages')[0] + '+/' + data['username']+'"> <img src="'+ data['avatar']+'" width="36" height="36" class="img-circle"> </a> </span> <span class="ks-owner"> <span class="ks-name">'+data['name']+'</span> <span class="badge badge-success ks-label-sm">Admin</span> </span> </div>');
                     }
                     else
                     {
-                        ksConvInfo.find('.ks-body>.ks-list>.ks-items').append('<div class="ks-item ks-user"> <span class="ks-avatar ks-online"> <a href="'+window.location.href.split('messages')[0] + '+/' + data['username']+'"> <img src="'+ data['avatar']+'" width="36" height="36" class="img-circle"> </a></span> <span class="ks-name">'+data['name']+' </span> </div>');
+                        ksConvInfo.find('.ks-body>.ks-list>.ks-items').append('<div class="ks-item ks-user"> <span class="ks-avatar ks-'+(data['online']?"online":"offline")+'"> <a href="'+window.location.href.split('messages')[0] + '+/' + data['username']+'"> <img src="'+ data['avatar']+'" width="36" height="36" class="img-circle"> </a></span> <span class="ks-name">'+data['name']+' </span> </div>');
                     }
                 });
 

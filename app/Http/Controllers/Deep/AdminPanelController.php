@@ -568,7 +568,7 @@ class AdminPanelController extends Controller
                                     $msgsender = users::find($msgval['sender']);
                                     if($msgsender)
                                     {
-                                        $msgsender = array('name' => $msgsender->name,'username'=>$msgsender->getMeta('username'),'avatar'=>asset( (new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar($msgval['sender'])),'self' => Auth::user()->getAuthIdentifier()== $msgsender->id);
+                                        $msgsender = array('name' => $msgsender->name,'username'=>$msgsender->getMeta('username'),'avatar'=>asset( (new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar($msgval['sender'])),'self' => Auth::user()->getAuthIdentifier()== $msgsender->id,'online'=>$msgsender->isOnline());
                                     }
                                     else
                                     {
@@ -576,7 +576,7 @@ class AdminPanelController extends Controller
                                     }
 
 
-                                    array_push($msgs,array('sender'=>$msgsender,'msg'=>$msgval['msg'],'time'=>Carbon::parse($msg->created_at)->format('d-M-Y g:i:s A')));
+                                    array_push($msgs,array('sender'=>$msgsender,'msg'=>$msgval['msg'],'time'=>Carbon::parse($msg->created_at)->diffForHumans(Carbon::now())));
                                 }
 
 
@@ -585,7 +585,7 @@ class AdminPanelController extends Controller
                                     $user = users::find($participant->value);
                                     if($user)
                                     {
-                                        $the_part = array('name' => $user->name,'username'=>$user->getMeta('username'),'avatar'=>asset( (new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar($user->id)),'admin'=>($conv->created_by==$user->id));
+                                        $the_part = array('name' => $user->name,'username'=>$user->getMeta('username'),'avatar'=>asset( (new \App\Http\Controllers\Deep\AdminPanelController())->get_avatar($user->id)),'admin'=>($conv->created_by==$user->id),'online'=>$user->isOnline());
                                     }
                                     else
                                     {
@@ -620,7 +620,7 @@ class AdminPanelController extends Controller
 
                                 if ($conv)
                                 {
-                                    array_push($arrDisInfo,array($conv->id,$msg_title,$conv->created_by,Carbon::parse($conv->created_at)->format('d-M-Y g:i:s A'),$conv->getByMeta('participant')->count(),$msgs,$participants,Carbon::parse($conv->updated_at)->format('d-M-Y g:i:s A')));
+                                    array_push($arrDisInfo,array($conv->id,$msg_title,$conv->created_by,Carbon::parse($conv->created_at)->format('d-M-Y g:i:s A'),$conv->getByMeta('participant')->count(),$msgs,$participants,Carbon::parse($conv->updated_at)->diffForHumans(Carbon::now())));
                                 }
                                 else
                                 {

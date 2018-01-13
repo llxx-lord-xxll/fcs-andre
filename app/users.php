@@ -3,6 +3,7 @@
 namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Kodeine\Metable\Metable;
 
@@ -53,4 +54,8 @@ class users extends Model
     protected $metaTable = 'users_meta';
     protected $dates = ['created_at'];
 
+    public function isOnline()
+    {
+        return Cache::has('user-online-'.$this->id);
+    }
 }
